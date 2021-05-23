@@ -35,10 +35,32 @@ public class Transacao {
     }
 
     public Transacao(String id, BigDecimal valor, Cartao cartao, Estabelecimento estabelecimento, LocalDateTime efetivadaEm) {
-    this.id = id;
+    
+    	this.id = id;
     this.valor = valor;
     this.cartao = cartao;
     this.estabelecimento = estabelecimento;
     this.efetivadaEm = efetivadaEm;
+    
+    }
+    
+    public String getId() {
+        return id;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+
+    public Estabelecimento getEstabelecimento() {
+        return estabelecimento;
+    }
+
+    public Cartao getCartao() {
+        return cartao;
+    }
+
+    public LocalDateTime getEfetivadaEm() {
+        return efetivadaEm;
     }
 }
