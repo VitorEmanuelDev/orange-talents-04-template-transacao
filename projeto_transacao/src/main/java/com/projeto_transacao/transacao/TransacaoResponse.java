@@ -9,7 +9,7 @@ import com.projeto_transacao.estabelecimento.EstabelecimentoResponse;
 
 public class TransacaoResponse {
 
-    private String id;
+    private Long id;
     private BigDecimal valor;
     private CartaoResponse cartao;
     private LocalDateTime efetivadaEm;
@@ -20,15 +20,15 @@ public class TransacaoResponse {
     public TransacaoResponse() {
     }
     
-    public TransacaoResponse(Transacao l) {
-        this.efetivadaEm = l.getEfetivadaEm();
-        this.id = l.getId();
-        this.valor = l.getValor();
-        this.cartao = new CartaoResponse(l.getCartao().getEmail(), l.getCartao().getId());
-        this.estabelecimento = new EstabelecimentoResponse(l.getEstabelecimento().getNome(), l.getEstabelecimento().getCidade(), l.getEstabelecimento().getEndereco());
+    public TransacaoResponse(Transacao transacao) {
+        this.efetivadaEm = transacao.getEfetivadaEm();
+        this.id = transacao.getId();
+        this.valor = transacao.getValor();
+        this.cartao = new CartaoResponse(transacao.getCartao().getId(), transacao.getCartao().getEmail());
+        this.estabelecimento = new EstabelecimentoResponse(transacao.getEstabelecimento().getNome(), transacao.getEstabelecimento().getCidade(), transacao.getEstabelecimento().getEndereco());
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 

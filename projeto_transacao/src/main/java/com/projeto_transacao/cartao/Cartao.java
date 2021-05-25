@@ -1,15 +1,15 @@
 package com.projeto_transacao.cartao;
 
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
-import org.springframework.data.annotation.Id;
 
 @Entity
 public class Cartao {
 
-    @Id
-    private String id;
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Email
     private String email;
@@ -18,12 +18,12 @@ public class Cartao {
     public Cartao() {
     }
     
-    public Cartao(String id, String email) {
+    public Cartao(Long id, String email) {
         this.id = id;
         this.email = email;
     }
     
-    public String getId() {
+    public Long getId() {
         return id;
     }
 

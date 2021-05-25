@@ -7,7 +7,7 @@ public class CartaoRequest {
 
     @NotBlank
     @NotNull
-    private String id;
+    private Long id;
 
     @Email
     private String email;
@@ -16,12 +16,12 @@ public class CartaoRequest {
     public CartaoRequest() {
     }
 
-    public CartaoRequest(String id, String email) {
+    public CartaoRequest(Long id, String email) {
         this.id = id;
         this.email = email;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 

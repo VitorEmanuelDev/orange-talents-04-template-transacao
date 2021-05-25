@@ -41,7 +41,7 @@ public class TransacaoController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<?> parar(@PathVariable("id") String id){
+    public ResponseEntity<?> parar(@PathVariable("id") Long id){
         try{
             cartaoTransacao.pararTransacao(id);
             return ResponseEntity.ok("Transação Finalizada");

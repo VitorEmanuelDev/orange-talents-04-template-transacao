@@ -7,6 +7,8 @@ import com.projeto_transacao.estabelecimento.Estabelecimento;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Positive;
@@ -17,7 +19,8 @@ import java.time.LocalDateTime;
 public class Transacao {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Positive
     private BigDecimal valor;
@@ -34,7 +37,7 @@ public class Transacao {
     public Transacao() {
     }
 
-    public Transacao(String id, BigDecimal valor, Cartao cartao, Estabelecimento estabelecimento, LocalDateTime efetivadaEm) {
+    public Transacao(Long id, BigDecimal valor, Cartao cartao, Estabelecimento estabelecimento, LocalDateTime efetivadaEm) {
     
     	this.id = id;
     this.valor = valor;
@@ -44,7 +47,7 @@ public class Transacao {
     
     }
     
-    public String getId() {
+    public Long getId() {
         return id;
     }
 

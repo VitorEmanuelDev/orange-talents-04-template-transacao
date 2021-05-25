@@ -16,5 +16,5 @@ public interface CartaoTransacao {
      void iniciarTransacao(@RequestBody CartaoRequest transacao);
 
     @DeleteMapping("/{id}")
-    void pararTransacao(@PathVariable("id") String id);
+    void pararTransacao(@PathVariable("id") Long id);
 }

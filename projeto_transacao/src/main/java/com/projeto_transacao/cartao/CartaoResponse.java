@@ -4,7 +4,7 @@ package com.projeto_transacao.cartao;
 
 public class CartaoResponse {
 
-    private String id;
+    private Long id;
 
     private String email;
 
@@ -12,12 +12,12 @@ public class CartaoResponse {
     public CartaoResponse() {
     }
 
-    public CartaoResponse(String id, String email) {
+    public CartaoResponse(Long id, String email) {
         this.id = id;
         this.email = email;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
